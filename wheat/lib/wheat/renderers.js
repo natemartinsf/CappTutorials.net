@@ -121,6 +121,7 @@ var Renderers = module.exports = {
         articles = _articles;
         description = _description;
         categories = _categories;
+        contribute = _contribute;
         index_categories = [ "Getting Started", "Frameworks", "Debugging", "Deployment", "Advanced"];
         var group = this.group();
         index_categories.forEach(function (category_name) {
@@ -136,6 +137,7 @@ var Renderers = module.exports = {
 					categories: categories,
           categories_list: categories_list,
           index_categories: index_categories,
+          contribute: contribute,
         }, this);
       },
       function callPostProcess(err, buffer) {
@@ -184,18 +186,24 @@ var Renderers = module.exports = {
 
   article: Git.safe(function renderArticle(version, name, callback) {
     var article, description;
+    console.log("artical renderer");
     Step(
       function loadData() {
+        console.log("load data");
         Git.getHead(this.parallel());
         Data.fullArticle(version, name, this.parallel());
       },
       function (err, head, props) {
+        console.log("process error: " + err);
+
         if (err) { callback(err); return; }
         article = props;
         insertSnippets(article.markdown, article.snippets, this.parallel());
         Git.readFile(head, "description.markdown", this.parallel());
       },
       function applyTemplate(err, markdown, description) {
+        console.log("apply template");
+
         if (err) { callback(err); return; }
         article.markdown = markdown;
         Tools.render("article", {
@@ -206,6 +214,8 @@ var Renderers = module.exports = {
         }, this);
       },
       function finish(err, buffer) {
+        console.log("finish");
+
         if (err) { callback(err); return; }
         postProcess({
           "Cache-Control": "public, max-age=3600"

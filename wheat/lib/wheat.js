@@ -67,13 +67,16 @@ module.exports = function setup(repo) {
     for (var i = 0, l = routes.length; i < l; i++) {
       var route = routes[i];
       var match = url.pathname.match(route.regex);
+      console.log(match);
       if (match) {
         match = Array.prototype.slice.call(match, 1);
+        console.log(match);
         if (match[0] === '') {
           // Resolve head to a sha if unspecified
           Git.getHead(function (err, sha) {
             if (err) { throw err; }
             match[0] = sha;
+            console.log(route.renderer);
             handleRoute(req, res, next, route.renderer, match);
           });
         } else {

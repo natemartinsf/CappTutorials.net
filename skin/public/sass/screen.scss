@@ -141,15 +141,20 @@ h3 {
 	color: $verylightblue;
 }
 
-
+hr {
+	color: $darkgray;
+	background-color: $darkgray;
+	height: 1px;
+	border: 0px;
+}
 
 /* dropdowns: general */
 a.dropdown { 
 	//background: #88bbd4; 
 	@include linear-gradient(color-stops(lighten($darkblue,28%), lighten($darkblue,25%), lighten($darkblue, 22%)));
-	$dropshadow: single-box-shadow(#444466, 0px, 1px, 1px, 0px);
-	$glow: single-box-shadow($verylightblue, 0px, 0px, 4px, 2px, inset);
-	@include box-shadow($dropshadow, $glow);
+	//$dropshadow: single-box-shadow(#444466, 0px, 1px, 1px, 0px);
+	//@include single-box-shadow($verylightblue, 0px, 0px, 4px, 2px, inset);
+	//@include box-shadow($glow);
 	@include single-box-shadow(#444466, 0px, 1px, 1px, 1px);
 	padding: 0.25em 0.5em 0.25em 0.5em; 
 	text-align: center;
@@ -158,7 +163,7 @@ a.dropdown {
 	color: $shadedgray; 
 	@include border-radius(4px, 4px);
 	border-top: $lightblue 1px solid;
-	border-bottom: darken($darkblue, 10%), 1px, solid;
+	//border-bottom: darken($darkblue, 10%), 1px, solid;
 	//-webkit-border-radius: 4px; 
 	//-moz-border-radius: 4px; 
 	@include border-radius(6px, 6px); 
@@ -169,7 +174,7 @@ a.dropdown {
 #menu1 {
 	position: relative;
 	top: -4em;
-	left: 40em;
+	left: 41.1em;
 
 	a.dropdown {		
 		@include border-top-right-radius(0);
@@ -180,7 +185,7 @@ a.dropdown {
 #menu2 {
 	position: relative;
 	top: -4em;
-	left: 38.5em;
+	left: 39.6em;
 		a.dropdown {		
 		@include border-top-left-radius(0);
 		@include border-bottom-left-radius(0);
@@ -192,7 +197,7 @@ a.dropdown {
 #menu3 {
 	position: relative;
 	top: -4em;
-	left: 38.5em;
+	left: 39.3em;
 		a.dropdown {		
 		@include border-top-left-radius(0);
 		@include border-bottom-left-radius(0);
@@ -232,7 +237,7 @@ a.dropdown.dropdown-active { color:$darkgray; background-color:#ddeef6; }
 }
 
   //.dropdown-menu p { font-size:1px; }
-.dropdown-menu a:link, .dropdown-menu a:visited  { font-weight:bold; color:$darkgray; text-decoration:none; line-height:1.7em; border-bottom: $darkgray 1px solid;}
+.dropdown-menu a:link, .dropdown-menu a:visited  { font-weight:normal; color:$darkgray; text-decoration:none; line-height:1.7em; }
 .dropdown-menu a:active, .dropdown-menu a:hover { color:$darkgray; }
 
       * html .dropdown-menu { top:28px; }
@@ -243,7 +248,7 @@ a.dropdown.dropdown-active { color:$darkgray; background-color:#ddeef6; }
   #dropdown1  { width:300px; }
   #dropdown1 a  { display:block; }
 #menu2      { float:left; }
-  #dropdown2  { width:300px; font-size:20px; }
+  #dropdown2  { width:300px;  }
 #menu3		{ float: left;}
-	#dropdown3 { width:300px; font-size:20px;}
+	#dropdown3 { width:300px; }
 .relative    { position:relative; }
