@@ -1,0 +1,53 @@
+!!! Strict
+%html(lang="en" xmlns="http://www.w3.org/1999/xhtml")
+  %head
+    %meta(http-equiv="content-type" content="text/html; charset=UTF-8")
+    %title #{(title ? title + " - " : "")}CappTutorials.net
+    %meta(name="description" content="Start building web applications with Cappuccino and Objective-J")
+    %link(rel="alternate" type="application/rss+xml" title="RSS 2.0" href="/feed.xml")
+    %link(href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css") 
+    %link(href="/favicon.ico" rel="icon" type="image/x-icon")
+    %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js")
+    %script(src="/scripts/menu.js")
+  %body.two-col
+
+  #container
+    #header
+      %h1
+        %a{href: "/"}
+          %span#accentdark Capp
+          %span#accentlight Tutorials
+      %h2.tagline
+        Start building web applications with Cappuccino and Objective-J
+      #menu1
+        .relative
+          %a#dd1.dropdown{href: "about"}
+            %span About
+          #dropdown1.dropdown-menu
+            .inner
+              = markdownEncode(data.description)
+      #menu2
+        .relative
+          %a#dd2.dropdown{href: "tutorials"}
+            %span Tutorials
+          #dropdown2.dropdown-menu
+            .inner
+              :each article in data.articles
+                %h4 
+                  %a{href: "/" + article.name}&= article.title
+      #menu3
+        .relative
+          %a#dd3.dropdown{href: "contribute"}
+            %span Contribute
+          #dropdown3.dropdown-menu
+            .inner
+              = markdownEncode(data.contribute)
+             
+    #content
+      = content
+    #footer
+      %p Site Design &copy; 2011 to Nate Martin. Based on design and code from "howtonode.com" &copy; 2010 to Tim Caswell under the MIT license. Content and articles are copyrighted to the individual authors. All code snippets used in the examples are in the public domain.
+      %p Wheat running on node #{process.version}
+
+
+

@@ -1,0 +1,249 @@
+// This import applies a global reset to any page that imports this stylesheet.
+@import "blueprint/reset";
+
+// To configure blueprint, edit the partials/base.sass file.
+@import "partials/base";
+
+// Import all the default blueprint modules so that we can access their mixins.
+@import "blueprint";
+
+// Combine the partials into a single screen stylesheet.
+@import "partials/page";
+@import "partials/form";
+@import "partials/two_col";
+
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/gradient";
+@import "compass/css3/text-shadow";
+
+//$darkblue: #3041A9;
+$mainblue: #3775D7;
+$darkblue: #1C51A6; 
+$lightblue: #96BDFC;
+$verylightblue: #DAE7FC;
+
+$darkbronze: #C48618;
+$lightbronze: #FFD68E;
+
+$green: #27A69D;
+$lightgreen: #8FF0E9;
+
+$shadedgray: #EFEFEF;
+$lightgray: #FEFEFE;
+
+$darkgray: #444444;
+
+$paneltop: #FEFEFE;
+$panelbottom: #E9E9E9;
+$highlighttop: #F2F4F4;
+$highlightbottom: #8F8B91;
+
+
+body {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+             "Helvetica Neue", sans-serif;
+	font-weight: 300;
+	background-image: url("/images/light_noise.png");
+	color: $darkgray;
+	a {
+		color: $darkblue;
+		text-decoration: none;
+
+	}
+
+	a:hover {
+		color: $lightblue;
+	}
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-style: italic;
+	color: $darkgray;
+}
+
+h3 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+#header {
+	$radius: 10px;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-image: url("/images/blue_noise.png");
+
+}
+
+#content{
+	background-image: url("/images/light_noise.png");
+	@include single-text-shadow(white, 0, 1px, 0);
+	overflow: hidden;
+	border-bottom: white 5px solid;
+	padding-top: 0em;
+}
+
+#content h2 {
+	//@include border-radius(40px, 40px);
+	//@include single-box-shadow(#888888, 0, 2px, 2px, 2px, inset);
+	//margin-right: 20%;
+	font-size: 2em;
+	font-weight: bold;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	padding-left: 0.5em;
+	padding-right: 1em;
+	margin-left: 0em;
+	margin-right: 0em;
+	margin-top: 0em;
+	//@include linear-gradient(color-stops(lighten($darkblue, 55%), lighten($darkblue, 50%)));
+	//@include single-box-shadow(#CCCCCC, 0px, 1px, 1px, 1px);
+	border-top: $highlighttop 1px solid;
+	border-bottom: lighten($darkblue, 50%) 0px solid;
+	text-align: right;
+}
+
+.article {
+	//@include linear-gradient(color-stops($paneltop, $panelbottom));
+	//@include single-box-shadow(#CCCCCC, 0px, 1px, 1px, 1px);
+	padding-top: 0.5em;
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	margin-left: 0em;
+	margin-right: 0em;
+	margin-bottom: 0em;
+	border-top: $highlighttop 0px solid;
+	border-bottom: $highlightbottom 0px solid;
+}
+
+#footer {
+	background-image: url("/images/blue_noise.png");
+	padding: 1em;
+	margin: 1em;
+}
+
+#accentlight {
+	color: $darkbronze;
+}
+
+#accentdark {
+	color: $lightbronze;
+}
+
+#accentverylight {
+	color: $verylightblue;
+}
+
+
+
+/* dropdowns: general */
+a.dropdown { 
+	//background: #88bbd4; 
+	@include linear-gradient(color-stops(lighten($darkblue,28%), lighten($darkblue,25%), lighten($darkblue, 22%)));
+	$dropshadow: single-box-shadow(#444466, 0px, 1px, 1px, 0px);
+	$glow: single-box-shadow($verylightblue, 0px, 0px, 4px, 2px, inset);
+	@include box-shadow($dropshadow, $glow);
+	@include single-box-shadow(#444466, 0px, 1px, 1px, 1px);
+	padding: 0.25em 0.5em 0.25em 0.5em; 
+	text-align: center;
+	text-decoration: none; 
+	font-weight: bold; 
+	color: $shadedgray; 
+	@include border-radius(4px, 4px);
+	border-top: $lightblue 1px solid;
+	border-bottom: darken($darkblue, 10%), 1px, solid;
+	//-webkit-border-radius: 4px; 
+	//-moz-border-radius: 4px; 
+	@include border-radius(6px, 6px); 
+	@include single-text-shadow($darkgray, 0, 1px, 0);
+}
+
+
+#menu1 {
+	position: relative;
+	top: -4em;
+	left: 40em;
+
+	a.dropdown {		
+		@include border-top-right-radius(0);
+		@include border-bottom-right-radius(0);
+	}
+
+}
+#menu2 {
+	position: relative;
+	top: -4em;
+	left: 38.5em;
+		a.dropdown {		
+		@include border-top-left-radius(0);
+		@include border-bottom-left-radius(0);
+		@include border-top-right-radius(0);
+		@include border-bottom-right-radius(0);
+	}
+}
+
+#menu3 {
+	position: relative;
+	top: -4em;
+	left: 38.5em;
+		a.dropdown {		
+		@include border-top-left-radius(0);
+		@include border-bottom-left-radius(0);
+	}
+}
+
+
+a.dropdown:hover { 
+	@include linear-gradient(color-stops(lighten($darkblue,32%), lighten($darkblue,29%), lighten($darkblue, 26%)));
+	color: $lightgray;
+}
+
+
+a.dropdown { position: relative; margin-left: 3px; }
+
+//a.dropdown span {  background-repeat: no-repeat; background-position: 100% 50%; padding: 4px 16px 6px 0; }
+a.dropdown.dropdown-active { color:$darkgray; background-color:#ddeef6; }
+.dropdown-menu  { 
+	
+	padding:0;
+	position:absolute; 
+	top:14px; 
+	right:-2px; 
+	display:none; 
+	z-index:5000; 
+	@include border-radius(30px, 30px); 
+	@include border-top-right-radius(0);
+	border: rgba(30,30,30,0.7) 10px solid;
+}
+
+.inner {
+	padding:7px 12px; 
+	@include linear-gradient(color-stops(lighten($darkblue,26%), lighten($darkblue,29%)));
+	@include border-radius(19px, 19px); 
+	@include border-top-right-radius(0);
+	margin:0;
+}
+
+  //.dropdown-menu p { font-size:1px; }
+.dropdown-menu a:link, .dropdown-menu a:visited  { font-weight:bold; color:$darkgray; text-decoration:none; line-height:1.7em; border-bottom: $darkgray 1px solid;}
+.dropdown-menu a:active, .dropdown-menu a:hover { color:$darkgray; }
+
+      * html .dropdown-menu { top:28px; }
+      *+ html .dropdown-menu { top:28px; }
+
+/* dropdowns: specific */
+#menu1      { float:left; margin-right:20px; }
+  #dropdown1  { width:300px; }
+  #dropdown1 a  { display:block; }
+#menu2      { float:left; }
+  #dropdown2  { width:300px; font-size:20px; }
+#menu3		{ float: left;}
+	#dropdown3 { width:300px; font-size:20px;}
+.relative    { position:relative; }

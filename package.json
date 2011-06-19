@@ -1,0 +1,7 @@
+{
+  "name": "CappTutorials",
+  "version": "0.0.1",
+  "dependencies": {
+    "connect": "0.5.10"
+  }
+}

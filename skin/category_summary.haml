@@ -1,0 +1,8 @@
+%h2 #{category.category}
+:each article in category.articles
+    .article
+      %h3
+        %a{href: "/" + article.name}&= article.title
+      %p
+        = intro(article.markdown)
+      %a{href: "/" + article.name} Read more...
