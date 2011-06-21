@@ -20,6 +20,7 @@
 //$darkblue: #3041A9;
 $mainblue: #3775D7;
 $darkblue: #1C51A6; 
+$translucentdarkblue: transparentize($darkblue, 0.05);
 $lightblue: #96BDFC;
 $verylightblue: #DAE7FC;
 
@@ -84,9 +85,12 @@ h3 {
 #content{
 	background-image: url("/images/light_noise.png");
 	@include single-text-shadow(white, 0, 1px, 0);
-	overflow: hidden;
 	border-bottom: white 5px solid;
 	padding-top: 0em;
+}
+
+.fullarticle {
+	clear: both;
 }
 
 #content h2 {
@@ -140,6 +144,66 @@ h3 {
 #accentverylight {
 	color: $verylightblue;
 }
+
+#content
+{
+	.fullarticle {
+		h1 {
+			font-size: 2.2em;
+			text-align: center;
+			font-weight: bold;
+			padding-bottom: 0.5em;
+		}
+
+		h2 {
+			text-align: left;
+		}
+
+		p {
+			margin-top: 1em;
+  			margin-bottom: 1em ;
+  			line-height: 1.2em;
+  		}
+		p + p {
+  			text-indent: 1.5em;
+  		}
+
+
+  		code {
+		  font-family: monaco, consolas, monospace;
+		  font-size: 90%;
+		  background-color: #efeeed;
+		  border: 1px solid #e0e0e0;
+		}
+		pre {
+		  border: 1px solid #aaa;
+		  background-color: #f6f5f4;
+		  margin: 0 -10px;
+		  display: block;
+		}
+		pre code {
+		  overflow-x: auto;
+		  max-height: 600px;
+		  font-size: 12px;
+		  line-height: 1.4em;
+		  display: block;
+		  padding: 10px;
+		  border: 0;
+		  background-color: inherit;
+		}
+
+		img {
+			display: block;
+			margin: auto;
+			@include border-radius(4px, 4px);
+			@include single-box-shadow(#888888, 0, 1px, 2px, 2px);
+
+		}
+
+
+	}
+}
+
 
 hr {
 	color: $darkgray;
@@ -198,9 +262,56 @@ a.dropdown {
 	position: relative;
 	top: -4em;
 	left: 39.3em;
-		a.dropdown {		
+	a.dropdown {		
 		@include border-top-left-radius(0);
 		@include border-bottom-left-radius(0);
+	}
+}
+
+#articlemenu1 {
+	position: relative;
+	top: -2.4em;
+	left: 52.6em;
+	font-size: 0.8em;
+	a.dropdown {		
+		@include border-top-right-radius(0);
+		@include border-bottom-right-radius(0);
+	}
+	float:left;
+}
+
+#articlemenu2 {
+	position: relative;
+	top: -2.4em;
+	left: 52.5em;
+	font-size: 0.8em;
+	a.dropdown {		
+		@include border-top-left-radius(0);
+		@include border-bottom-left-radius(0);
+	}
+	float:left;
+}
+
+.dropdown-menu {
+	@include single-text-shadow(black, 0, 0px, 1px);
+	width: 400px;
+	img {
+		width: 100px;
+		height: 100px;
+		float: right;
+	}
+
+	dl {
+		width: 260px;
+	}
+
+	dt {
+		font-size: 1.4em;
+	}
+
+	dd {
+		font-size: 1.8em;
+		padding-left: 2em;
 	}
 }
 
@@ -230,14 +341,27 @@ a.dropdown.dropdown-active { color:$darkgray; background-color:#ddeef6; }
 
 .inner {
 	padding:7px 12px; 
-	@include linear-gradient(color-stops(lighten($darkblue,26%), lighten($darkblue,29%)));
+	@include linear-gradient(color-stops(lighten($translucentdarkblue,26%), lighten($translucentdarkblue,29%)));
 	@include border-radius(19px, 19px); 
 	@include border-top-right-radius(0);
 	margin:0;
+	dd {
+		a:link {
+		color: $mainblue;
+		@include single-text-shadow($darkblue, 0, 0px, 1px);
+
+		}
+	}
 }
 
+
   //.dropdown-menu p { font-size:1px; }
-.dropdown-menu a:link, .dropdown-menu a:visited  { font-weight:normal; color:$darkgray; text-decoration:none; line-height:1.7em; }
+.dropdown-menu a:link, .dropdown-menu a:visited  {
+@param 0.8;
+
+ font-weight:normal; color:$darkgray; text-decoration:none; line-height:1.7em;
+
+ }
 .dropdown-menu a:active, .dropdown-menu a:hover { color:$darkgray; }
 
       * html .dropdown-menu { top:28px; }
@@ -252,3 +376,17 @@ a.dropdown.dropdown-active { color:$darkgray; background-color:#ddeef6; }
 #menu3		{ float: left;}
 	#dropdown3 { width:300px; }
 .relative    { position:relative; }
+
+.str{color:#080}
+.kwd{color:#008}
+.com{color:#800}
+.typ{color:#606}
+.lit{color:#066}
+.pun{color:#660}
+.pln{color:#000}
+.tag{color:#008}
+.atn{color:#606}
+.atv{color:#080}
+.dec{color:#606}
+
+

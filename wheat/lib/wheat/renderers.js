@@ -185,24 +185,26 @@ var Renderers = module.exports = {
   }),
 
   article: Git.safe(function renderArticle(version, name, callback) {
-    var article, description;
-    console.log("artical renderer");
+    var article, description,  articles;
     Step(
       function loadData() {
-        console.log("load data");
         Git.getHead(this.parallel());
         Data.fullArticle(version, name, this.parallel());
+        Data.articles(version, this.parallel());
       },
-      function (err, head, props) {
-        console.log("process error: " + err);
+      function (err, head, props, _articles) {
 
         if (err) { callback(err); return; }
+        articles = _articles;
         article = props;
         insertSnippets(article.markdown, article.snippets, this.parallel());
+        categories_list = [ "Getting Started", "Frameworks", "Debugging", "Deployment", "Advanced"];
         Git.readFile(head, "description.markdown", this.parallel());
+        Git.readFile(head, "contribute.markdown", this.parallel());
+
+
       },
-      function applyTemplate(err, markdown, description) {
-        console.log("apply template");
+      function applyTemplate(err, markdown, description, contribute) {
 
         if (err) { callback(err); return; }
         article.markdown = markdown;
@@ -210,11 +212,13 @@ var Renderers = module.exports = {
           title: article.title,
           article: article,
           author: article.author,
-          description: description
+          description: description,
+          articles: articles,
+          categories_list: categories_list,
+          contribute: contribute,
         }, this);
       },
       function finish(err, buffer) {
-        console.log("finish");
 
         if (err) { callback(err); return; }
         postProcess({

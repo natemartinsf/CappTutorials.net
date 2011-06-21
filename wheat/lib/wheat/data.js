@@ -248,6 +248,7 @@ var Data = module.exports = {
         Data.article(version, name, this);
       },
       function loadExtras(err, props) {
+
         if (err) { callback(err); return; }
         article = props;
         Data.articles(version, this.parallel());
