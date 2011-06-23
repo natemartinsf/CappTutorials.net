@@ -325,14 +325,12 @@ var Data = module.exports = {
           if (element && element.categories) {
             element.categories.forEach(function(category) {
               if(!start.hasOwnProperty(category)) {
-                console.log("adding new categry");
                 start[category] =  {
                       "category": category,
                       "articles": [element] };
               }
               else
               {
-                console.log("adding to existing category");
                 start[category]["articles"].push(element);
               }
             });

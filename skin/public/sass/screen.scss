@@ -30,7 +30,7 @@ $lightbronze: #FFD68E;
 $green: #27A69D;
 $lightgreen: #8FF0E9;
 
-$shadedgray: #EFEFEF;
+$shadedgray: #DEDEDE;
 $lightgray: #FEFEFE;
 
 $darkgray: #444444;
@@ -45,10 +45,12 @@ body {
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
              "Helvetica Neue", sans-serif;
 	font-weight: 300;
-	background-image: url("/images/light_noise.png");
-	color: $darkgray;
+	background-image: url("/images/dark_noise.png");
+	color: $shadedgray;
+
+	overflow: visible;
 	a {
-		color: $darkblue;
+		color: $mainblue;
 		text-decoration: none;
 
 	}
@@ -58,6 +60,7 @@ body {
 	}
 }
 
+
 h1 {
 	font-size: 3em;
 }
@@ -65,12 +68,13 @@ h1 {
 h2 {
 	font-size: 1.5em;
 	font-style: italic;
-	color: $darkgray;
+	color: $darkbronze;
 }
 
 h3 {
 	font-size: 1.5em;
 	margin-bottom: 0.5em;
+
 }
 
 #header {
@@ -78,14 +82,14 @@ h3 {
 	padding-bottom: 1em;
 	padding-left: 1em;
 	padding-right: 1em;
-	background-image: url("/images/blue_noise.png");
+	background-image: url("/images/dark_noise.png");
 
 }
 
 #content{
-	background-image: url("/images/light_noise.png");
-	@include single-text-shadow(white, 0, 1px, 0);
-	border-bottom: white 5px solid;
+	background-image: url("/images/dark_noise.png");
+	@include single-text-shadow($darkgray, 0, 1px, 0);
+	border-bottom: $darkgray 5px solid;
 	padding-top: 0em;
 }
 
@@ -108,8 +112,8 @@ h3 {
 	margin-top: 0em;
 	//@include linear-gradient(color-stops(lighten($darkblue, 55%), lighten($darkblue, 50%)));
 	//@include single-box-shadow(#CCCCCC, 0px, 1px, 1px, 1px);
-	border-top: $highlighttop 1px solid;
-	border-bottom: lighten($darkblue, 50%) 0px solid;
+	border-top: lighten($darkgray, 10%) 1px solid;
+	border-bottom: lighten($darkgray, 10%) 0px solid;
 	text-align: right;
 }
 
@@ -124,13 +128,14 @@ h3 {
 	margin-right: 0em;
 	margin-bottom: 0em;
 	border-top: $highlighttop 0px solid;
-	border-bottom: $highlightbottom 0px solid;
+	border-bottom: $darkgray 0px solid;
 }
 
 #footer {
-	background-image: url("/images/blue_noise.png");
+	background-color: rgba(.2, .2, .2, .2);
 	padding: 1em;
 	margin: 1em;
+	font-size: 0.8em;
 }
 
 #accentlight {
@@ -147,39 +152,83 @@ h3 {
 
 #content
 {
+	overflow: visible;
 	.fullarticle {
+
+		overflow: visible;
+		
+
 		h1 {
 			font-size: 2.2em;
 			text-align: center;
 			font-weight: bold;
 			padding-bottom: 0.5em;
+			text-align: left;
+			margin-left: 0em;
 		}
 
 		h2 {
+
 			text-align: left;
+			padding-left: 0;
+			margin-left: 0em;
+		}
+
+		h3 {
+
+			color: $darkbronze;
+			text-align: left;
+			margin-top: 1em;
+			margin-bottom: 0.5em;
+			margin-left: 0em;
+
 		}
 
 		p {
 			margin-top: 1em;
   			margin-bottom: 1em ;
   			line-height: 1.2em;
-  		}
-		p + p {
+  			margin-left: 2em;
+  			margin-right: 2em;
   			text-indent: 1.5em;
+
   		}
 
+  		ul {
+  			margin-left: 4em;
+  			margin-right: 2em;
+  		}
+  		
+
+  		.snippet {
+  			a
+  			{
+  				
+  			margin-left: 2em;
+  			margin-right: 2em;
+  			margin-bottom: 0.5em;
+  			display: block;
+  			}
+  		}
 
   		code {
 		  font-family: monaco, consolas, monospace;
 		  font-size: 90%;
-		  background-color: #efeeed;
-		  border: 1px solid #e0e0e0;
+		  background-color: #002028;
+		  border: 1px solid #002028;
+		  @include single-text-shadow($darkgray, 0, 1px, 0);
+		  @include border-radius(4px, 4px);
+
+
 		}
 		pre {
 		  border: 1px solid #aaa;
-		  background-color: #f6f5f4;
-		  margin: 0 -10px;
+		  background-color: #002028;
+		  margin: 0 0px;
 		  display: block;
+		  @include border-radius(4px, 4px);
+		  margin-left: 2em;
+  		margin-right: 2em;
 		}
 		pre code {
 		  overflow-x: auto;
@@ -208,6 +257,7 @@ h3 {
 hr {
 	color: $darkgray;
 	background-color: $darkgray;
+	border-color: $darkgray;
 	height: 1px;
 	border: 0px;
 }
@@ -270,7 +320,7 @@ a.dropdown {
 
 #articlemenu1 {
 	position: relative;
-	top: -2.4em;
+	top: 2.7em;
 	left: 52.6em;
 	font-size: 0.8em;
 	a.dropdown {		
@@ -282,7 +332,7 @@ a.dropdown {
 
 #articlemenu2 {
 	position: relative;
-	top: -2.4em;
+	top: 2.7em;
 	left: 52.5em;
 	font-size: 0.8em;
 	a.dropdown {		
@@ -294,6 +344,7 @@ a.dropdown {
 
 .dropdown-menu {
 	@include single-text-shadow(black, 0, 0px, 1px);
+	color: $darkgray;
 	width: 400px;
 	img {
 		width: 100px;
@@ -377,16 +428,16 @@ a.dropdown.dropdown-active { color:$darkgray; background-color:#ddeef6; }
 	#dropdown3 { width:300px; }
 .relative    { position:relative; }
 
-.str{color:#080}
-.kwd{color:#008}
-.com{color:#800}
-.typ{color:#606}
-.lit{color:#066}
-.pun{color:#660}
-.pln{color:#000}
-.tag{color:#008}
-.atn{color:#606}
-.atv{color:#080}
-.dec{color:#606}
+.str{color:#b58900}
+.kwd{color:#cb4b16}
+.com{color:#dc322f}
+.typ{color:#d33682}
+.lit{color:#6c71c4}
+.pun{color:#268bd2}
+.pln{color:#2aa198}
+.tag{color:#859900}
+.atn{color:#d33682}
+.atv{color:#6c71c4}
+.dec{color:#268bd2}
 
 
