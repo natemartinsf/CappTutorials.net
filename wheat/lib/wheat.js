@@ -24,7 +24,7 @@ SOFTWARE.
 require.paths.unshift(__dirname + "/wheat");
 require('proto');
 var Url = require('url'),
-    Git = require('./git-fs/'),
+    Git = require('git-fs/'),
     Renderers = require('renderers');
 
 var routes = [];
