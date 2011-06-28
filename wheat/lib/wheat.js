@@ -20,11 +20,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-require.paths.unshift(__dirname + "/wheat");
 
+require.paths.unshift(__dirname + "/wheat");
 require('proto');
 var Url = require('url'),
-    Git = require('git-fs'),
+    Git = require('git-fs/'),
     Renderers = require('renderers');
 
 var routes = [];
