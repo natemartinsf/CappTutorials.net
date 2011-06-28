@@ -9,5 +9,5 @@ module.exports = Connect.createServer(
   Connect.favicon(),
   Connect.cache(),
   Connect.gzip(),
-  require('./wheat/')(__dirname)
+  require('./wheat/')("./.git/")
 ).listen(port);
