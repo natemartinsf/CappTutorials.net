@@ -3,8 +3,4 @@ Github: natemartinsf
 Twitter: natemartinsf
 Location: San Bruno, CA
 
-I presently work in the electronic medical records field, and have a background in consumer internet sites that support millions of views a day.
-
-When I'm not reloading the page, I play [Old-Time music](http://en.wikipedia.org/wiki/Old-time_music) on the fiddle and banjo.
-
-A lot of developers are scared of the Real-Time Web and the programming challenges / mystique surrounding it.  I would like to show the world that it's not so bad =)
+I'm an Electrical Engineer by day, and code at night. I'm working on a exciting project using Cappuccino, and I'm looking forward to showing it someday.

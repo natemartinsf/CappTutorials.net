@@ -122,7 +122,7 @@ var Renderers = module.exports = {
         description = _description;
         categories = _categories;
         contribute = _contribute;
-        index_categories = [ "Getting Started", "Frameworks", "Debugging", "Deployment", "Advanced"];
+        index_categories = [ "Getting Started", "Testing"];
         var group = this.group();
         index_categories.forEach(function (category_name) {
           Tools.render("category_summary", {category: categories[category_name]}, group(), true);
