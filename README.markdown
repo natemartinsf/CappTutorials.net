@@ -1,45 +1,39 @@
-# HowToNode.org
+# CappTutorials.net
 
-This is a community supported blog about how to program in nodejs.
+CappTutorials.net is a community run collection of tutorials for the Cappuccino web framework. 
 
-This is powered by a new static blog engine written in node called [wheat][].
+Cappuccino is a revolutionary frontend web framework that brings the power of Cocoa to the web.
 
-To run a local version of the blog, simply install [wheat][] and it's dependencies, node.JS v0.1.101 or later.
+You can find more information about Cappuccino, and the source itself, at [github.](https://github.com/280north/cappuccino)
 
-If you have [spark][] installed, just type `spark` in this directory.  If not, append `.listen(3000)` right before the closing semicolon and run it with `node app.js`
-
-You can get a working wheat environment out of the box with [ivy][].
-
-[wheat]: http://github.com/creationix/wheat
-[ivy]: http://github.com/creationix/ivy
-[spark]: http://github.com/senchalabs/spark
+CappTutorials.net runs on a fork of [wheat,](https://github.com/creationix/wheat) and is based on [howtonode.org](http://howtonode.org)
 
 ## Contributing
 
-The best way to contribute is to fork this repository and add your article.  If this is your first article, then please add an entry for yourself in the authors directory as well.
+Anyone can add new tutorials to this site! Just fork the site on [github](https://github.com/natemartinsf/CappTutorials.net), add an article, and send a pull request.
+
+All articles are stored in markdown format. Take a look at other articles to see how to set categories, etc.
+
+Categories are manually ordered on the index page. If you add a new category, edit the index and the "index" method in renderers.js to add the category.
+
+We welcome any other contributions as well! If you want to change how the site behaves, or even redesign the site, feel free to fork and modify!
 
 ### Article format
 
-Every article is a markdown file with some meta-data at the top of the file.
+        Every article is a markdown file with some meta-data at the top of the file.
 
-    Title: Control Flow in Node Part II
-    Author: Tim Caswell
-    Date: Thu Feb 04 2010 02:24:35 GMT-0600 (CST)
-    Node: v0.1.91
+        Title: Getting Started with Cappuccino
+        Author: Nate Martin
+        Date: Mon Jun 21 2011 23:25:00 GMT-0700 (PDT)
+        Categories: Getting Started
 
-    I had so much fun writing the last article on control flow, that I decided to...
+        So you've heard about this new client-side web framework called Cappuccino...
 
-    ## First section: Display JavaScript files
-    
-    * display contents of external JavaScript file (path is relative to .markdown file)
-    <test-code/test-file.js>
 
-    * display contents of external JavaScript file and evaluate its contents 
-    <test-code/evaluate-file.js*>
+            /*
+             * indent code
+             */
 
-    More content goes here.
-
-More docs to come soon...
 
 ## Licensing
 
