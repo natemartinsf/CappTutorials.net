@@ -102,6 +102,8 @@ task('symlink-live', ["load-props", "create-versioned-dir", "move-files"], funct
 			ln;
 	
 	// Symlink to the versioned directory
+	var command = "rm " + livePath + " && ln -sv " + versionedPath + " " + livePath;
+	console.log ("running: "+command);
 	ln = exec("rm " + livePath + " && ln -sv " + versionedPath + " " + livePath, function (error, stdout, stderr) {
 		if (error !== null && error.message.indexOf("No such file or directory") === -1) {
 			console.log(error.message);
