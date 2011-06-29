@@ -123,7 +123,9 @@ task('default', ["load-props", "create-versioned-dir", "move-files", "symlink-li
 			upstart;
 	
 	// Stop the old version of the app and start the new version with monit
-	exec("sudo monit stop " + properties.siteName + "-" + properties.state, function (error, stdout, stderr) {
+	var command = "sudo monit stop " + properties.siteName + "-" + properties.state;
+	console.log("About to run: "+command);
+	exec(command, function (error, stdout, stderr) {
 
 		if (error) {
 			throw error;
