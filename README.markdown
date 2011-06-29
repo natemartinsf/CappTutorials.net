@@ -20,7 +20,7 @@ We welcome any other contributions as well! If you want to change how the site b
 
 ### Article format
 
-        Every article is a markdown file with some meta-data at the top of the file.
+Every article is a markdown file with some meta-data at the top of the file.
 
         Title: Getting Started with Cappuccino
         Author: Nate Martin
