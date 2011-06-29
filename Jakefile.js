@@ -105,7 +105,7 @@ task('symlink-live', ["load-props", "create-versioned-dir", "move-files"], funct
 			ln;
 	
 	// Symlink to the versioned directory
-	var command = "rm " + livePath + " && ln -sv " + versionedPath + " " + livePath +" && ln -sv "+gitPath+" " + livePath+"/.git";
+	var command = "rm " + livePath + " && ln -sv " + versionedPath + " " + livePath;
 	console.log ("running: "+command);
 	ln = exec("rm " + livePath + " && ln -sv " + versionedPath + " " + livePath, function (error, stdout, stderr) {
 		if (error !== null && error.message.indexOf("No such file or directory") === -1) {
@@ -134,6 +134,13 @@ task('default', ["load-props", "create-versioned-dir", "move-files", "symlink-li
 	var command = "sudo monit stop " + properties.siteName + "-" + properties.state;
 	console.log("About to run: "+command);
 	exec("whoami", function (error, stdout, stderr) {
+		if (error) {
+			throw error;
+		} else {
+			console.log(error, stdout, stderr);
+		}
+	});
+	exec("ln -sv "+gitPath+" " + livePath+"/.git", function (error, stdout, stderr) {
 		if (error) {
 			throw error;
 		} else {
