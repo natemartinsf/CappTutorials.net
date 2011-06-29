@@ -109,6 +109,7 @@ task('symlink-live', ["load-props", "create-versioned-dir", "move-files"], funct
 			console.log(error.message);
 			throw error;
 		} else {
+			console.log(error + " "+ stdout+ " " + stderr);
 			console.log("Symlink created");
 			complete();
 		}
