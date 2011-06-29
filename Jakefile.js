@@ -125,6 +125,13 @@ task('default', ["load-props", "create-versioned-dir", "move-files", "symlink-li
 	// Stop the old version of the app and start the new version with monit
 	var command = "sudo monit stop " + properties.siteName + "-" + properties.state;
 	console.log("About to run: "+command);
+	exec("whoami", function (error, stdout, stderr) {
+		if (error) {
+			throw error;
+		} else {
+			console.log(error, stdout, stderr);
+		}
+	});
 	exec(command, function (error, stdout, stderr) {
 
 		if (error) {
