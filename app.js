@@ -1,7 +1,7 @@
 // Just a basic server setup for this site
 var Connect = require('connect');
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 
 module.exports = Connect.createServer(
   Connect.logger(),
