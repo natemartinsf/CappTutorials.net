@@ -46,7 +46,7 @@ task('load-props', ["install-npm-depends"], function() {
 									properties.siteName + "@" + properties.version;
 	livePath = properties.siteLocation + properties.state + "/" + properties.siteName;
 
-	gitPath = "~" + properties.siteName + ".net.git";
+	gitPath = "~/" + properties.siteName + ".net.git";
 
 	console.log("Properties read successfully");
 
