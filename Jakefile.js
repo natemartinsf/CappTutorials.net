@@ -20,6 +20,7 @@ task('install-npm-depends', [], function () {
 // Initialise properties
 var properties = null,
 		versionedPath = null,
+		gitPath = null,
 		livePath = null;
 
 desc('Loads in properties file');
@@ -44,6 +45,8 @@ task('load-props', ["install-npm-depends"], function() {
 	versionedPath = properties.siteLocation + properties.state + "/.versions/" +
 									properties.siteName + "@" + properties.version;
 	livePath = properties.siteLocation + properties.state + "/" + properties.siteName;
+
+	gitPath = "~" + properties.siteName + ".net.git";
 
 	console.log("Properties read successfully");
 
@@ -102,7 +105,7 @@ task('symlink-live', ["load-props", "create-versioned-dir", "move-files"], funct
 			ln;
 	
 	// Symlink to the versioned directory
-	var command = "rm " + livePath + " && ln -sv " + versionedPath + " " + livePath;
+	var command = "rm " + livePath + " && ln -sv " + versionedPath + " " + livePath +" && ln -sv "+gitPath+" " + livePath+"/.git";
 	console.log ("running: "+command);
 	ln = exec("rm " + livePath + " && ln -sv " + versionedPath + " " + livePath, function (error, stdout, stderr) {
 		if (error !== null && error.message.indexOf("No such file or directory") === -1) {
@@ -114,6 +117,8 @@ task('symlink-live', ["load-props", "create-versioned-dir", "move-files"], funct
 			complete();
 		}
 	});
+
+
 
 }, true);
 
