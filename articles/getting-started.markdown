@@ -7,19 +7,19 @@ So you've heard about this new client-side web framework called Cappuccino, and 
 
 ## Prerequisites
 
-There's a few different things you will need to have installed before developing with Cappuccino. 
+For this tutorial there are a few different things you will need to have installed. You can develop cappuccino without these, but this tutorial is specifically showing how to use Xcode.
 
-*   A Mac
+-   A Mac
+-   Xcode 4. Purchase on the [App Store][] or download from the [Apple Developer Center][] if you are a registered developer.
+-   [Git][].
+-   A text editor
 
->You could develop Cappuccino applications on Windows or Linux, but a Mac is the preferred and supported environment
+You could develop Cappuccino applications on Windows or Linux, but using a Mac is the only way to visually edit your Cibs.
 
-*   Xcode 4. Purchase on the [App Store][] or download from the [Apple Developer Center][] if you are a registered developer.
+Xcode 4 is used to edit .cib files, the main way to design your UI. You can use Cappuccino without using .cib files, but it will be much harder. This tutorial is going to show development using Xcode 4.
+At the very least, you need to have some version of Xcode installed on your mac in order to have GCC.
 
->Xcode 4 is used to edit .cib files, the main way to design your UI. You can use Cappuccino without using .cib files, but it will be much harder. This tutorial is going to show development using Xcode 4.
-At the very least, you need to have some version of Xcode installed in order to have GCC.
-
-* [Git][].
-
+You can use XCode to edit text if you want, but feel free to use your text editor of choice!
 
 ##Downloading Cappuccino
 
