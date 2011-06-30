@@ -11,6 +11,7 @@ We welcome any other contributions as well! If you want to change how the site b
 Want to write a tutorial, but stumped on a topic? Here's some tutorials that would be a fantastic addition:
 
 *	Getting started with Cappuccino on Linux or Windows
+*	An Introduction to Objective-J
 *	Deploying your Cappuccino app
 *	Connecting to backends (Seperate articles for Rails and Node.js?)
 *	Using Core Animation
