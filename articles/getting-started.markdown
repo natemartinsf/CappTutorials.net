@@ -51,8 +51,7 @@ We need to install one final application: Xcodecapp-Cocoa
 
 >Note: Very soon, this will be merged into the main Cappuccino install. But for now, this is a separate install
 
-Xcodecapp-cocoa is an application that helps you to use Xcode to develop Cappuccino apps. Download it from [https://github.com/primalmotion/xcodecapp-cocoa](https://github.com/primalmotion/xcodecapp-cocoa). Open the downloaded Xcode project, build the application, and install it in your Applications folder.
-
+Xcodecapp-cocoa is an application that helps you to use Xcode to develop Cappuccino apps. Download it from [http://antoinemercadal.fr/xcodecappcocoa/](http://antoinemercadal.fr/xcodecappcocoa/). After you download the application, install it in your Applications folder.
 ## Let's build a webapp!
 
 OK, enough installing, let's make something! Open your terminal again, navigate to your projects directory (you have a "Projects" directory, right?) and type: `capp gen -l -t NibApplication testApp`
