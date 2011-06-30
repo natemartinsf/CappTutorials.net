@@ -1,4 +1,4 @@
-Title: Getting Started with Cappuccino
+Title: Getting Started with Cappuccino and Xcode
 Author: Nate Martin
 Date: Mon Jun 21 2011 23:25:00 GMT-0700 (PDT)
 Categories: Getting Started
@@ -76,7 +76,9 @@ Now it's time to launch "Xcodecapp-cocoa". When it launches, you should see a sm
 
 Click on the menu, choose "Start Listening" and navigate to the project folder you just created in the open dialog that will open. You should see a series of Growl notifications appear. 
 
-What is this program doing? It looks for changes to files in your project, and processes them to help your development. If it sees a .xib or .nib file change, it automatically converts them into a .cib file that Cappuccino can use. And, if a .j file changes, it creates a .h file in a hidden Xcode project, that allows Interface Builder to see outlets and actions.  <img src="/getting-started/loadingProject.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/> <img src="/getting-started/loadingXib.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/> <img src="/getting-started/loadingAppController.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/><img src="/getting-started/projectLoaded.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/>
+What is this program doing? It looks for changes to files in your project, and processes them to help your development. If it sees a .xib or .nib file change, it automatically converts them into a .cib file that Cappuccino can use. And, if a .j file changes, it creates a .h file in a hidden Xcode project, that allows Interface Builder to see outlets and actions.  
+
+<img src="/getting-started/loadingProject.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/> <img src="/getting-started/loadingXib.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/> <img src="/getting-started/loadingAppController.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/><img src="/getting-started/projectLoaded.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/>
 
 You might notice that the .xib file was processed. If you look in the resources directory now, you should have a "MainMenu.cib" file. Let's try loading the application again.
 
@@ -144,7 +146,7 @@ Delete the slider, and add a button from the library on the right. Center the bu
 
 With the button selected, click on the "ruler" icon in the inspector on the right.<img src="/getting-started/ruler.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle; margin-top: 0em; margin-bottom: 0.5em;"/> Set the autoresizing behavior to stay centered by deselecting all the constraints. It should look like this: <img src="/getting-started/resizing.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle; margin-top: 0em; margin-bottom: 0em;"/>
 
-<img src="/getting-started/makeAction.png" style=" float: right; margin-left: 3em; margin-right: 2em;"/>
+<img src="/getting-started/makeAction.png" style=" float: right; margin-left: 3em; margin-right: 2em; margin-bottom:2em;"/>
 Hold the "control" key and drag from the "Say Hello" button. You should see a blue line following your mouse. Drag this over to the blue cube on the left labeled "App Controller" and release the drag.   A menu labeled "received actions" should pop up, with a method `buttonClicked:` listed below. Click on `buttonClicked:`. What did we just do there? We told the button to call the `buttonClicked:` method of your App Controller class whenever it is pressed. This method was displayed in the menu because it was declared with the keyword `@action`: 
 
     - (@action)buttonClicked:(id)sender
