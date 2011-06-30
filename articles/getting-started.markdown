@@ -27,7 +27,7 @@ You have two choices here.
 
 *   Download the latest stable release
 
-<img src="/getting-started/downloads.png" style="float:right;margin: 0 0 10px 10px; width:500px;" />
+<img src="/getting-started/downloads.png" style="float:right;margin-left: 3em; margin-right: 2em; width:500px;" />
 Go to [github.com/280north/cappuccino](https://github.com/280north/cappuccino) and click the download link, and choose the latest version to install. As of the writing of this tutorial, the latest version is v0.9.0. Decompress the downloaded file.
 
 or 
@@ -67,7 +67,7 @@ Finally, we named the new project testApp.
 
 If you open the newly created testApp directory, you should see a few different files and folders. We'll explain what all these are for in a moment, but first, let's see what was created. Drag the "index-debug.html" file to a web browser to load the page.
 
-<img src="/getting-started/loading.png" style="float:right; margin: 10px;" />
+<img src="/getting-started/loading.png" style="float:right; margin: 10px; margin-left: 3em; margin-right: 2em;" />
 You should see see something like the image to the right: 
 
 What's going on? Why isn't the application loading? Cappuccino loads its UI from files called Cibs. If you look in the Resources directory, you see a file called "MainMenu.xib", but no file called "MainMenu.cib"! Xib (or Nib) files can be edited in XCode, but we need to turn them into Cibs before Cappuccino can use them. Thankfully, there are some great tools to help us with that!
@@ -76,7 +76,7 @@ Now it's time to launch "Xcodecapp-cocoa". When it launches, you should see a sm
 
 Click on the menu, choose "Start Listening" and navigate to the project folder you just created in the open dialog that will open. You should see a series of Growl notifications appear. 
 
-What is this program doing? It looks for changes to files in your project, and processes them to help your development. If it sees a .xib or .nib file change, it automatically converts them into a .cib file that Cappuccino can use. And, if a .j file changes, it creates a .h file in a hidden Xcode project, that allows Interface Builder to see outlets and actions.  <img src="/getting-started/loadingProject.png" style="display:inline; margin-left: 5px;"/> <img src="/getting-started/loadingXib.png" style="display:inline; margin-left: 5px;"/> <img src="/getting-started/loadingAppController.png" style="display:inline; margin-left: 5px;"/><img src="/getting-started/projectLoaded.png" style="display:inline; margin-left: 5px;"/>
+What is this program doing? It looks for changes to files in your project, and processes them to help your development. If it sees a .xib or .nib file change, it automatically converts them into a .cib file that Cappuccino can use. And, if a .j file changes, it creates a .h file in a hidden Xcode project, that allows Interface Builder to see outlets and actions.  <img src="/getting-started/loadingProject.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/> <img src="/getting-started/loadingXib.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/> <img src="/getting-started/loadingAppController.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/><img src="/getting-started/projectLoaded.png" style="display:inline; margin-left: 5px; margin-top: 0.25em; margin-bottom: 0.25em;"/>
 
 You might notice that the .xib file was processed. If you look in the resources directory now, you should have a "MainMenu.cib" file. Let's try loading the application again.
 
@@ -136,15 +136,15 @@ If you are a cocoa developer, this probably looks very familiar to you. If not, 
 
 (By the way, when you saved the file, you probably saw a growl notification telling you that the .j file had been processed. Pretty cool, huh?)
 
-Now, in XCode, click on "MainMenu.xib" to start editing the UI. Click on the small window icon <img src="/getting-started/windowIcon.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle;"/> to show the window we're editing, and click on the "right panel" button <img src="/getting-started/viewbuttons.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle;"/> to show the inspector. Your Xcode window should look something like this:
+Now, in XCode, click on "MainMenu.xib" to start editing the UI. Click on the small window icon <img src="/getting-started/windowIcon.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle; margin-top: 0em; margin-bottom: 0em;"/> to show the window we're editing, and click on the "right panel" button <img src="/getting-started/viewbuttons.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle; margin-top: 0em; margin-bottom: 0em;"/> to show the inspector. Your Xcode window should look something like this:
 
 <img src="/getting-started/XCode-IB.png" style=" margin-left: auto; margin-right:auto; vertical-align: middle; width: 75%"/>
 
-Delete the slider, and add a button from the library on the right. Center the button under the text field, and doubleclick on it to change the title. Change the title to "Say Hello" and then resize the button to be 90 pixels wide. <img src="/getting-started/UI1.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle;"/>
+Delete the slider, and add a button from the library on the right. Center the button under the text field, and doubleclick on it to change the title. Change the title to "Say Hello" and then resize the button to be 90 pixels wide. <img src="/getting-started/UI1.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle; margin-top: 0em; margin-bottom: 0em;"/>
 
-With the button selected, click on the "ruler" icon in the inspector on the right.<img src="/getting-started/ruler.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle;"/> Set the autoresizing behavior to stay centered by deselecting all the constraints. It should look like this: <img src="/getting-started/resizing.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle;"/>
+With the button selected, click on the "ruler" icon in the inspector on the right.<img src="/getting-started/ruler.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle; margin-top: 0em; margin-bottom: 0.5em;"/> Set the autoresizing behavior to stay centered by deselecting all the constraints. It should look like this: <img src="/getting-started/resizing.png" style="display:inline; margin-left: 5px; margin-right: 5px; vertical-align: middle; margin-top: 0em; margin-bottom: 0em;"/>
 
-<img src="/getting-started/makeAction.png" style=" float: right;"/>
+<img src="/getting-started/makeAction.png" style=" float: right; margin-left: 3em; margin-right: 2em;"/>
 Hold the "control" key and drag from the "Say Hello" button. You should see a blue line following your mouse. Drag this over to the blue cube on the left labeled "App Controller" and release the drag.   A menu labeled "received actions" should pop up, with a method `buttonClicked:` listed below. Click on `buttonClicked:`. What did we just do there? We told the button to call the `buttonClicked:` method of your App Controller class whenever it is pressed. This method was displayed in the menu because it was declared with the keyword `@action`: 
 
     - (@action)buttonClicked:(id)sender
@@ -153,7 +153,7 @@ If you look at the `buttonClicked:` method in the code above, you can see that i
 
     @outlet CPTextField textField;
 
-<img src="/getting-started/makeOutlet.png" style=" float: right;"/> 
+<img src="/getting-started/makeOutlet.png" style=" float: right; margin-left: 3em; margin-right: 2em;"/> 
 This will allow us to connect this variable to an object in the nib. Go back to XCode, hold control, and drag from the App Controller blue cube over to the text field. When you release the drag, you will see a menu. Click on `textField`. You now connected the `textField` instance variable to the CPTextField in the window.
 
 Finally, double click on the text box and type "Hello World!" to set the default text, and resize the textfield to be 140 pixels wide. Center the text field, and you're done! 

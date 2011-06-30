@@ -228,8 +228,10 @@ h3 {
 		  margin: 0 0px;
 		  display: block;
 		  @include border-radius(4px, 4px);
-		  margin-left: 2em;
-  		margin-right: 2em;
+		  margin-top: 2em;
+		  margin-bottom: 2em;
+		  margin-left: 4em;
+  			margin-right: 4em;
 		}
 		pre code {
 		  overflow-x: auto;
@@ -244,9 +246,12 @@ h3 {
 
 		img {
 			display: block;
-			margin: auto;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
 			@include border-radius(4px, 4px);
-			@include single-box-shadow(#888888, 0, 1px, 2px, 2px);
+			//@include single-box-shadow(#888888, 0, 1px, 2px, 2px);
 
 		}
 
