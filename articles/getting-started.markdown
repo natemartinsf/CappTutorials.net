@@ -62,7 +62,7 @@ The `-l` flag told `capp` to symlink to the frameworks you installed earlier. Th
 
 The `-t` flag told `capp` to use a template called `NibApplication` to generate the project. This is a template that creates the shell of a project based around Cibs. (Maybe the template should be called CibApplication instead?)
 
-Finally, we named the new project testApp.
+Finally, we named the new project testApp. Due to a bug in Xcodecapp-cocoa, you should use a project name without spaces. This should be fixed soon.
 
 If you open the newly created testApp directory, you should see a few different files and folders. We'll explain what all these are for in a moment, but first, let's see what was created. Drag the "index-debug.html" file to a web browser to load the page.
 
